@@ -15,7 +15,6 @@ This GitHub repository serves as class notes and contains code from almost every
 
 Please refer to it, and try to run the code too. If you find any errors, feel free to change them and make a pull request. I will approve the pull request once I am able to review the code.
 
-## Week 1 - CS 100 Revision
 #   - Week 1 (Revision and Basic Concepts)
         - Class 1
             - Pointers
