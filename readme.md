@@ -1,7 +1,7 @@
 # Introduction to Programming -- CS 200 - Dr. Waqar Ahmed SBASSE
 
 Professor Email: waqar.ahmad@lums.edu.pk
-Teaching Assistant(s): 
+# - Teaching Assistant(s): 
     - Badar Shaban (Head TA)
     - Hassnain
     - Abdullah Somroo
