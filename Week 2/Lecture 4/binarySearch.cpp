@@ -10,9 +10,14 @@ using namespace std;
         //The iterative implementation of binary search requires only one function call.
             //what is life? *a stack overflow.* 
                 //suggested by github copilot, aah man, i love github copilot
+                //copilot
+int recursiveBinarySearch(int targetNumber){
+    
+}
 int recursiveBinarySearch(int targetNumber, int arr[], int start, int end)
 {
-    if (start > end)
+    //base case
+    if (start > end) 
         return -1;
     int mid = (start + end) / 2;
     if (arr[mid] == targetNumber)
@@ -27,7 +32,7 @@ int main()
 {
     int arr[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17};
     int size = sizeof(arr) / sizeof(arr[0]);
-    int targetNumber = 9;
+    int targetNumber = 2;
     
     int index = recursiveBinarySearch(targetNumber, arr, 0, size - 1);
     cout << index;
