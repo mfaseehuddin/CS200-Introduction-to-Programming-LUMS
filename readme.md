@@ -28,4 +28,18 @@ Please refer to it, and try to run the code too. If you find any errors, feel fr
         - Class 3
             - Iteration
             - Recursion
+        - Class 4
+            - Recursive Binary Search
+        - Lab 2
+            - Recursive Fibonacci Sequence
+            - Prime Numbers from 2 to N
+            - 2D Array Matrix Multiplication 
+        - Practice Notes
+            - Variable pass by reference
+            - Variable pass by value
+#   - Week 3
+        - Class 5
+        - Class 6
+        - Practice Notes
+            - Command Line Arguments
 
