@@ -39,6 +39,8 @@ Please refer to it, and try to run the code too. If you find any errors, feel fr
             - Variable pass by value
 #   - Week 3
         - Class 5
+            - Structs
+            - Classes
         - Class 6
         - Practice Notes
             - Command Line Arguments
