@@ -21,7 +21,7 @@ class Date {
         void print();
         //setter functions
         void setDate(int d, int m, int y);
-
+        void setDate(Date d);
         //destructor
         ~Date();
         
@@ -56,6 +56,13 @@ void Date::setDate(int d, int m, int y) {
     day = d;
     month = m;
     year = y;
+}
+
+void Date::setDate(Date d) {
+    //we can access the private members of d using the . operator, because we are inside the class
+    day = d.day; 
+    month = d.month;
+    year = d.year;
 }
 void Date::print() {
     cout << day << "/" << month << "/" << year << endl;
@@ -100,6 +107,11 @@ int main()
     d4.setDate(21, 9, 2022);//calling the setter function
     d4.print();
 
+    Date d5;
+    d5.setDate(d4);//calling the setter function. d5 is passed to setDate() implicitly, and d4 is passed to setDate() explicitly
+    d5.print();
+
+    Date d6 = d5; //calling the copy constructor
 
     //Declare d2 as instance/object of class Date
     //adding 10 days to d1: not taught in lecture
