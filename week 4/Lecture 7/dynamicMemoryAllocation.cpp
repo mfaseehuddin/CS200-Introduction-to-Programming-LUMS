@@ -25,6 +25,11 @@ using namespace std;
         the dynamically allocated variables can be accessed using the pointer -- using the dereference operator i.e: pointer notation
         the memory allocated using new is not initialized, and will not be deallocated automatically
 
+        ///////////////////////////////// Dynamically allocated memory exception handling - not included in todays class ///////////////////////////////////////
+        if the memory allocation fails, the new operator will throw an exception of type bad_alloc, we can catch this exception using a try catch block or we can use the nothrow keyword to prevent the exception from being thrown.
+        Another case if the memory allocation fails, the new operator will return a null pointer, we can check if the memory allocation failed by checking if the pointer is null.
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
         To deallocate the memory we use the delete operator
         delete pointerName;
         delete [] pointerName;
@@ -154,6 +159,39 @@ int main()
             //the date object pointed to by d is printed using pointer notation
             //over here d.print() will not work because the print function is not a member of the pointer d, but of the object pointed to by d
             //however: (*d).print() will work
+    delete d;
+        //explaination:
+            //the memory pointed to by d is deallocated
+            //the memory is deallocated using the delete operator
+    //if the pointer is deleted, the object pointed to by the pointer is also deleted
+
+    /*
+        see thing is if we do not use the new operator to allocate memory for the object, the object will be allocated in the stack
+        and when the function ends, the object will be deallocated from the stack
+        however if we use the new operator to allocate memory for the object, the object will be allocated in the heap
+        and when the function ends, the object will not be deallocated from the heap
+        and when the program ends, the memory allocated in the heap will not be deallocated automatically
+        and this is where the destructor comes in
+        the destructor is called when the object is deallocated from the heap
+        and the destructor is used to deallocate the memory allocated in the heap by the object
+
+        but the thing is that from compiler to compiler, the destructor is called at different times
+        and has different behaviour - as pointed out by Ross Driedger on Quora
+        Question: What would happen in C++ if I delete a pointer that is not allocated a dynamic memory in the heap?
+        Ross:
+            The results of this are undefined by the specification.
+
+            It could:
+
+                - Do nothing,
+                - Halt the process with some kind of memory fault,
+                - Reformat your harddrive,
+                - Send the launch codes to all American missile submarines, or
+                - Anything else.
+                If your process does any of these, it is a fully compliant compiler in this regard.
+
+            That said, it is a really, Really, REALLY bad idea.
+    */
 
 
     return 0;
