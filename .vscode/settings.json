@@ -3,6 +3,16 @@
         "*.ejs": "html",
         "ostream": "cpp",
         "iostream": "cpp",
-        "chrono": "cpp"
+        "chrono": "cpp",
+        "__config": "cpp",
+        "__hash_table": "cpp",
+        "bitset": "cpp",
+        "locale": "cpp",
+        "sstream": "cpp",
+        "type_traits": "cpp",
+        "typeinfo": "cpp",
+        "version": "cpp",
+        "algorithm": "cpp",
+        "complex": "cpp"
     }
 }
