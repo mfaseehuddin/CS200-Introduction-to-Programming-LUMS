@@ -1,14 +1,16 @@
 #include <iostream>
 using namespace std;
 
-
+//majazi length of array is a name we came up for a floating end of the set array.
+//we will use this to keep track of the end of the array
+//even though the array is static, we will be able to add and remove items from the array - total max elements 100
 
 class SetFixedLength{
     int set[100];
     int* MajaziLengthOfArray;
 
 public:
-//default constructor
+    //default constructor
     SetFixedLength(){
         MajaziLengthOfArray = &set[0];
     }
