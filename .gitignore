@@ -3,6 +3,4 @@
 /personal
 /assignments
 *.out
-/.*
-*.json
-*/.*
+** /.vscode
