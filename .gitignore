@@ -3,3 +3,6 @@
 /personal
 /assignments
 *.out
+/.*
+*.json
+*/.*
