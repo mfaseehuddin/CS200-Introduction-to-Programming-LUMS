@@ -37,11 +37,23 @@ Please refer to it, and try to run the code too. If you find any errors, feel fr
         - Practice Notes
             - Variable pass by reference
             - Variable pass by value
-#   - Week 3
+#   - Week 3 (Classes and Structs)
         - Class 5
             - Structs
             - Classes
         - Class 6
+            - Classes
+                - Scope Resolution operator
+                - Constructors
+                - Destructors
         - Practice Notes
             - Command Line Arguments
 
+#   - Week 4 (Dynamic Memory allocation -- Classes)
+        - Lecture 7
+            - Pointers -> Dynamic Memory allocation
+            - Dynamic Memory allocation for arrays
+        - Lecture 8
+            - Data structure - Stack - Class
+            - Quiz
+                - Recursion
