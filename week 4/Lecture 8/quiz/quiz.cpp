@@ -2,7 +2,7 @@
 using namespace std;
 
 
-void recur(n){
+void recur(int n){
     if(n==1){
         cout << "bc" << endl;
     }else{
@@ -15,6 +15,6 @@ void recur(n){
 
 int main()
 {
-
+    recur(3);
     return 0;
 }
