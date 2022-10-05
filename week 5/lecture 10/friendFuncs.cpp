@@ -49,6 +49,10 @@ class Complex{
         }
 
         //friend overload << operator using ref
+        //what is ostream?
+            //ostream is a class that represents the output stream
+            //return type is ostream& because we are returning a reference to the ostream object
+            //the reason we are returning a reference is because we want to be able to chain the << operator
         friend ostream& operator<<(ostream &out, Complex c){
             out << c.real << " + " << c.imaginary << "i";
             return out;
@@ -56,9 +60,9 @@ class Complex{
 
         //friend overload >> operator using ref
         friend istream& operator>>(istream &in, Complex &c){
-            cout << "Enter the real part: ";
+            cout << "Enter real part: ";
             in >> c.real;
-            cout << "Enter the imaginary part: ";
+            cout << "Enter imaginary part: ";
             in >> c.imaginary;
             return in;
         }
@@ -90,7 +94,21 @@ int main()
     //we can not call the overloaded + operator as a normal function because it is a friend function
     //hence, we can not call it as operator+(c1, c2) or c3.operator+(c1)
 
-    operator<<(cout, c3);
+    //valid
+    // operator<<(cout, c3);
+
+    cout << c1 << " + " << c2 << " + " << c4 << " = " << c3 << endl;
+    //breakdown
+    // cout << c1; -> out
+    // out << " + " << c2 << " + " << c4 << " = " << c3 << endl;
+    // out << " + " << c2; -> out
+    // out << " + " << c4 << " = " << c3 << endl;
+    // out << " + " << c4; -> out
+    // out << " = " << c3 << endl;
+    // out << " = " << c3; -> out
+    // out << endl;
+    
+
 
     return 0;
 }
