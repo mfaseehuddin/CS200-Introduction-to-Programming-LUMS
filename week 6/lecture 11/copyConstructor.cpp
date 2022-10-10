@@ -35,6 +35,21 @@ class Complex{
         //overload + operator as a friend function
         friend Complex operator+(Complex, Complex);
 
+        //overload prefix ++ operator
+        Complex operator++(){
+            Complex temp;
+            temp.real = ++real;
+            temp.imaginary = ++imaginary;
+            return temp;
+        }
+        //overload postfix ++ operator
+        Complex operator++(int x){
+            Complex temp;
+            temp.real = ++real;
+            temp.imaginary = ++imaginary;
+            return temp;
+        }
+
         //overload = operator
         Complex operator=(Complex &c){
             real = c.real;
@@ -58,6 +73,66 @@ class Complex{
         }
 };
 
+class ComplexStack{
+    private:
+        Complex *stack;
+        int top;
+    public:
+        //default constructor
+        ComplexStack(){
+            stack = new Complex[10];
+            top = -1;
+        }
+        //copy constructor
+        //deep copy
+        ComplexStack(ComplexStack &cs){
+            stack = new Complex[10];
+            top = cs.top;
+            for(int i = 0; i <= top; i++){
+                stack[i] = cs.stack[i];
+            }
+        }
+        //destructors
+        ~ComplexStack(){
+            delete [] stack;
+        }
+        //push
+        void push(Complex c){
+            stack[++top] = c;
+        }
+        //pop
+        Complex pop(){
+            return stack[top--];
+        }
+        //overload = operator
+        //deep copy
+        ComplexStack operator=(ComplexStack &cs){
+            top = cs.top;
+            for(int i = 0; i <= top; i++){
+                stack[i] = cs.stack[i];
+            }
+            return (*this);
+        }
+        //overload << operator
+        friend ostream& operator<<(ostream &out, ComplexStack cs){
+            for(int i = 0; i <= cs.top; i++){
+                out << cs.stack[i] << endl;
+            }
+            return out;
+        }
+        //overload >> operator
+        friend istream& operator>>(istream &in, ComplexStack &cs){
+            cs.stack = new Complex[10];
+            cout << "Enter number of elements to add: ";
+            in >> cs.top;
+            for(int i = 0; i <= cs.top; i++){
+                in >> cs.stack[i];
+            }
+            return in;
+        }
+};
+
+
 int main()
 {
     //what is a copy constructor?
@@ -76,13 +151,23 @@ int main()
     //ways to use the copy constructor
     Complex C2(C1); // <- copy constructor
     Complex C3 = C1; // <- copy constructor
-    Complex C4 = Complex(1,1); // <- copy constructor
-    Complex C5 = Complex(C1); // <- copy constructor
+    // Complex C4 = Complex(1,1); // <- copy constructor
+    // Complex C5 = Complex(C1); // <- copy constructor
 
     //not using the copy constructor
-    Complex C4;
-    C4 = C1; // <- assignment operator
-    Complex C5 = {1,1}; // <- parameterized constructor
+    Complex C6;
+    C6 = C1; // <- assignment operator
+
+    //use the ComplexStack class
+    ComplexStack cs1;
+    cin >> cs1;
+    cout << cs1;
+    ComplexStack cs2(cs1);
+    cout << cs2;
+    ComplexStack cs3;
+    cs3 = cs1;
+    cout << cs3;
+
 
     return 0;
 }
