@@ -53,6 +53,7 @@ class Complex{
             //ostream is a class that represents the output stream
             //return type is ostream& because we are returning a reference to the ostream object
             //the reason we are returning a reference is because we want to be able to chain the << operator
+            //simply, we want to be able to do cout << c1 << c2 << c3;
         friend ostream& operator<<(ostream &out, Complex c){
             out << c.real << " + " << c.imaginary << "i";
             return out;
