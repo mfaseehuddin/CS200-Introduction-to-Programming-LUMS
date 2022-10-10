@@ -36,9 +36,12 @@ class Complex{
         friend Complex operator+(Complex, Complex);
 
         //overload = operator
-        void operator=(Complex &c){
+        Complex operator=(Complex &c){
             real = c.real;
             imaginary = c.imaginary;
+            //why are we returning? 
+                //because we want to be able to chain the = operator
+            return *this; //??
         }
         //overload << operator
         friend ostream& operator<<(ostream &out, Complex c){
@@ -75,7 +78,7 @@ int main()
     Complex C3 = C1; // <- copy constructor
     Complex C4 = Complex(1,1); // <- copy constructor
     Complex C5 = Complex(C1); // <- copy constructor
-    
+
     //not using the copy constructor
     Complex C4;
     C4 = C1; // <- assignment operator
