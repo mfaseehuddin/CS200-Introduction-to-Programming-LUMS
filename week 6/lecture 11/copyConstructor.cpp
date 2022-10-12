@@ -58,11 +58,14 @@ class Complex{
                 //because we want to be able to chain the = operator
             return *this; //??
         }
+        //cout
         //overload << operator
-        friend ostream& operator<<(ostream &out, Complex c){
-            out << c.real << " + " << c.imaginary << "i";
+        friend ostream& operator<<(ostream& out, Complex &c){
+            out << c.real << " + " << c.imaginary << "i" << endl;
             return out;
-        }
+        }  
+
+
         //overload >> operator
         friend istream& operator>>(istream &in, Complex &c){
             cout << "Enter real part: ";
@@ -167,7 +170,6 @@ int main()
     ComplexStack cs3;
     cs3 = cs1;
     cout << cs3;
-
 
     return 0;
 }
