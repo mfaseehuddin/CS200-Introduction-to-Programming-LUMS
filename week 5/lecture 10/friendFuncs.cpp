@@ -90,11 +90,11 @@ int main()
     //as we have Complex return type of the overloaded + operator, we can store the result in a Complex object
     //hence, we can chain the overloaded + operator
     //chained + will resolve from left to right
+    cin >> c1;
     Complex c3 = c1 + c2 + c4;
 
     //we can not call the overloaded + operator as a normal function because it is a friend function
     //hence, we can not call it as operator+(c1, c2) or c3.operator+(c1)
-
     //valid
     // operator<<(cout, c3);
 
