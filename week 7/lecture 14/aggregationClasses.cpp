@@ -287,6 +287,46 @@ public:
     }
 };
 
+
+
+//singleton pattern
+// we want to create a class that can only have one instance
+//example: a class that can only have one database connection
+// we want to use the singleton pattern to create this class
+class Connection
+{
+private:
+    //create a private static instance of the class
+    static Connection *instance;
+
+    // we want to make the constructor private so that we can only create one instance of the class
+    Connection()
+    {
+        cout << "Connection created" << endl;
+    }
+    // we want to make the copy constructor private so that we can only create one instance of the class
+    Connection(const Connection &obj)
+    {
+        cout << "Connection created" << endl;
+    }
+public: 
+    // we want to make the destructor public so that we can destroy the instance of the class
+    ~Connection()
+    {
+        cout << "Connection destroyed" << endl;
+    }
+    // we want to make the getInstance function public so that we can get the instance of the class
+    static Connection *getInstance()
+    {
+        if (instance == NULL)
+        {
+            instance = new Connection();
+        }
+        return instance;
+    }
+};
+
+
 int main()
 {
 
@@ -296,6 +336,15 @@ int main()
     {
         cout << (c1++) << (++c1) << endl;
     }
+
+    //Notes!
+    //if we declare the constructor as a private member, we cannot create an object of the class
+    //if we declare the constructor as a protected member, we can only create an object of the class in a derived class
+
+    //singleton pattern
+    //we want to create a class that can only have one instance
+    //we can use the singleton pattern to do this
+    //we can use the static keyword and a private constructor to do this
 
 
     // for (MyCounter c1(10, 1); !c1.maxReached(); c1.increment())
