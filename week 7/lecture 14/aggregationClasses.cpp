@@ -162,7 +162,7 @@ public:
     // destructor
     ~Counter()
     {
-        cout << "Counter destroyed" << endl;
+        // cout << "Counter destroyed" << endl;
     }
     // increment
     void increment()
@@ -178,6 +178,11 @@ public:
     void setCount(int c)
     {
         count = c;
+    }
+    //print count
+    void printCount()
+    {
+        cout << "Count: " << count << " ";
     }
 };
 
@@ -211,7 +216,7 @@ public:
     // destructor
     ~MyCounter()
     {
-        cout << "MyCounter destroyed" << endl;
+        // cout << "MyCounter destroyed" << endl;
     }
     // increment
     void increment()
@@ -253,15 +258,51 @@ public:
             return false;
         }
     }
+    //postfix increment operator overload
+    MyCounter operator++(int)
+    {
+        cout << "Post fix   ";
+        //this does not work
+        // increment();
+        // return *this;
+        // we have to make a copy of the object
+        // increment the original object
+        // return the copy
+
+        MyCounter temp = *this;
+        increment();
+        return temp;
+    }
+    MyCounter operator++(){
+        cout << "Pre  fix   ";
+        increment();
+        return *this;
+    }
+
+    //overload the << operator
+    friend ostream &operator<<(ostream &output, MyCounter obj)
+    {
+        output << obj.counter.getCount() << "/" << obj.max << endl;
+        return output;
+    }
 };
 
 int main()
 {
+
+    MyCounter c1(10, 0);
+
+    for (int i = 0; i < 15; i++)
+    {
+        cout << (c1++) << (++c1) << endl;
+    }
+
+
     // for (MyCounter c1(10, 1); !c1.maxReached(); c1.increment())
     // {
     //     cout << c1.getCount() << endl;
     // }
     //THIS WORKS! because the counter is a part of the MyCounter class, so when the MyCounter class is destroyed, the counter is destroyed as well
-
+    
     return 0;
 }
