@@ -298,17 +298,22 @@ class Connection
 private:
     //create a private static instance of the class
     static Connection *instance;
-
+    string name;
     // we want to make the constructor private so that we can only create one instance of the class
     Connection()
     {
         cout << "Connection created" << endl;
+        name = "default";
     }
+    
     // we want to make the copy constructor private so that we can only create one instance of the class
-    Connection(const Connection &obj)
-    {
-        cout << "Connection created" << endl;
-    }
+    // Connection(const Connection &obj)
+    // {
+    //     cout << "Connection created" << endl;
+    // }
+    //do we really need this?
+    // do we need a copy constructor for a singleton class?
+    // we do not need a copy constructor for a singleton class, because we only want one instance of the class
 public: 
     // we want to make the destructor public so that we can destroy the instance of the class
     ~Connection()
@@ -318,14 +323,25 @@ public:
     // we want to make the getInstance function public so that we can get the instance of the class
     static Connection *getInstance()
     {
+        cout << "getInstance called" << endl;
         if (instance == NULL)
         {
+            cout << "Creating instance" << endl;
             instance = new Connection();
         }
+        cout << "Returning instance" << endl;
         return instance;
+    }
+    string getName(){
+        return name;
     }
 };
 
+// we want to make the instance of the class NULL
+//this is because we want to make sure that the instance is NULL before we create an instance of the class
+//this works because the instance is static, however, we can not set it to null inline because it is a pointer
+Connection *Connection::instance = nullptr;
+// i do not completely understand this, but i think that it is because the instance is a pointer, and we can not set it to null inline
 
 int main()
 {
@@ -336,6 +352,43 @@ int main()
     {
         cout << (c1++) << (++c1) << endl;
     }
+
+
+    //create a connection
+    Connection *conn = Connection::getInstance();
+    //so what is happening here is that the getInstance function is called, and the function checks if the instance is null
+    //if yes, then it creates a new instance of the class, by calling the constructor
+
+
+
+    //create another connection
+    Connection *conn2 = Connection::getInstance(); //-> this line is redundant, but it is here to show that we can not create another instance of the class
+    //this second connection will not be created because the first connection is already created, and it will be the same connection
+
+    // Connection *conn3 = new Connection(); //-> this line is incorrect, because the const, but it is here to show that we can not create another instance of the class
+
+    //we can check that by printing the addresses of the connections
+    cout << conn << endl;
+    cout << conn2 << endl;
+
+
+
+
+    //lets destroy the connection  
+    Connection::getInstance()->~Connection();
+    //we can not destroy the connection again, because it has already been destroyed
+    // delete conn2;
+
+    // conn = Connection::getInstance();
+    //what have I done :( 
+    //I have created a memory leak
+    //I am a bad boy 😎
+    //so no deleting the connection within the connection class
+
+
+
+
+    cout << conn->getName();
 
     //Notes!
     //if we declare the constructor as a private member, we cannot create an object of the class
