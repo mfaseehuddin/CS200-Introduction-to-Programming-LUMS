@@ -8,6 +8,7 @@ Professor Email: waqar.ahmad@lums.edu.pk
     - Talha
     - Farrukh
     - Usman Haider
+    - Saad Mehmoon
 
 In this course we will expand upon the concepts learned in CS100
 
@@ -57,3 +58,37 @@ Please refer to it, and try to run the code too. If you find any errors, feel fr
             - Data structure - Stack - Class
             - Quiz
                 - Recursion
+
+#   - Week 5 (Further on Classes - Operator Overloading)
+        - Lecture 9
+            - Friend Functions
+            - Operator Overloading
+        - Lecture 10
+            - Operator Overloading
+            - Further on Classes
+        - Pre Lab 5
+            - Integer Class -> Operator Overloading
+        - Assignment 2
+            - Vector Class -> make a vector class with all the necessary operators overloaded
+
+#   - Week 6 (Copy Constructor, Assignment Operator, and Inheritance)
+        - Lecture 11
+            - Copy Constructor
+            - Assignment Operator
+        - Lecture 12
+            - Dynamic 2D Array
+            - Inheritance
+        - Pre Lab 6
+            - Matrix Class -> All the operators overloaded
+
+#   - Week 7 (Inheritance and Polymorphism)
+        - Lecture 13
+            - Inheritance
+            - Static Variables - shared by all objects of a class
+        - Lecture 14
+            - Class Aggregation
+            - Singleton Pattern
+        - Assignment 3
+            - Classes
+            - Dynamic Memory Allocation
+            - RPG Game
