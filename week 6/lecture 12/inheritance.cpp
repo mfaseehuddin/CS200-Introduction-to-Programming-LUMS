@@ -64,6 +64,10 @@ public:
     ~Counter(){
         cout << "Counter destructor called" << endl;
     };
+
+    void print(){
+        cout << "Base Class count: " << count << endl;
+    }
 };
 
 
@@ -91,6 +95,10 @@ public:
     ~ExtendedCounter(){
         cout << "ExtendedCounter destructor called" << endl;
     };
+
+    void print(){
+        cout << "Derived Class count: " << count << endl;
+    }
 };
 
 
@@ -105,7 +113,27 @@ int main()
     cout << c1.inc() << endl;
     cout << c1.dec() << endl;
 
+    //extended Counter has a IS-A / IS-KIND-OF relationship with Counter
     
+    //hence the following line is valid
+    //assign the pointer of the derived class to the pointer of the base class
+    Counter *c2 = &c1;
+    //is c1 being casted? no
+    //then? c1 is being assigned to c2 -> how can this be possible?
+    //c1 is a derived class object, yes but? c1 is also a base class object
+
+
+    //the following line will call the print method of the base class
+    c2->print();
+
+    Counter *c4;
+    ExtendedCounter *c5;
+
+    c4 = c5;
+
+    c5->print();
+    c4->print();
+
 
 
     return 0;
