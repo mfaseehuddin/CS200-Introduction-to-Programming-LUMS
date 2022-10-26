@@ -16,6 +16,12 @@ public:
     {
         cout << "Destructor: Base" << endl;
     }
+    void display(){
+        cout << "display(): Base" << endl;
+    }
+    //make a pure virtual function in the base class and override it in the derived class.
+    virtual void show() = 0;//once we have a pure virtual function in the base class, the base class becomes an abstract class.
+    //then the base class cannot be instantiated.
 };
 
 class Derived : public Base
@@ -34,6 +40,12 @@ public:
     {
         cout << "Destructor: Derived" << endl;
     }
+    void display(){
+        cout << "display(): Derived" << endl;
+    }
+    void show(){
+        cout << "show(): Derived" << endl;
+    }
 };
 
 
@@ -44,12 +56,14 @@ public:
 /////////but it was not virtual in the base class, why does it work? -> because the base class print function is virtual
 
 int main(){
-    Base *b = new Base();
-    b->print();
-    delete b;
-    cout << endl;
+    // Base *b = new Base();//is this valid now?->no
+    // b->print();
+    // b->display(); //this is not a virtual function, so it will call the base class function
+    // delete b;
+    // cout << endl;
 
-    b = new Derived();
+    Base *b = new Derived();
+    b->display(); //this is not a virtual function, so it will call the base class function
     b->print(); 
     delete b; //this has a problem -> the base class destructor is called, but the derived class destructor is not called
     //to fix this problem, we need to make the base class destructor virtual // as done in the class above
