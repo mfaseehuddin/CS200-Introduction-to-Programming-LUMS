@@ -3,9 +3,17 @@ using namespace std;
 
 // class topic: aggregation in classes
 
+
+
 // what is aggregation?
 // aggregation is a relationship between two classes where one class is a part of another class
 // aggregation is a special case of composition and is a form of association, where the part can exist independently of the whole
+
+// what is the difference between aggregation and composition?
+// composition is a special case of aggregation, where the part cannot exist independently of the whole
+// -> in Composition, the life of the part is dependent on the life of the whole
+// -> in Aggregation, the life of the part is independent of the life of the whole
+
 
 // example of aggregation
 // question: what is the relationship between a car and its engine?
