@@ -41,11 +41,17 @@ int main()
 
     //read from file
     string line;
-    while(!in.eof())
-    {
-        cout << line;
-        in >> line;
-    }
+    // while(!in.eof())
+    // {
+    //     cout << line;
+    //     in >> line;
+    // }
+
+    // while(true){
+    //     getline(in, line);
+    //     cout << line << endl;
+    // }
+
     in.seekg(0, ios::beg);//this is not working properly, why? -> 
     //print the first line
     in >> line;
