@@ -92,3 +92,70 @@ Please refer to it, and try to run the code too. If you find any errors, feel fr
             - Classes
             - Dynamic Memory Allocation
             - RPG Game
+
+#   - Week 8 (Inheritance and Polymorphism)
+        - Lecture 15
+            - Polymorphism
+            - Virtual Functions
+        - Lecture 16
+            - Virtual Functions
+            - Abstract Classes
+        - Assignment 4
+            - Classes
+            - Inheritance
+            - Polymorphism
+            - Virtual Functions
+            - Abstract Classes
+            - RPG Game
+        - Pre Lab 8
+            - Classes
+            - Inheritance
+            - Polymorphism
+            - Virtual Functions
+            - Abstract Classes
+            - Date Class -> Complete the Date class with all the necessary operators overloaded
+
+#   - Week 9
+        - Lecture 16
+            - Polymorphism
+            - Virtual Functions
+        - Lecture 17
+            - Virtual Functions
+            - Abstract Classes
+            - Canvas Class -> Shape Class -> Derived Shapes
+                - Rectangle
+                - Circle
+                - Triangle
+                --- Allows for drawing on the console
+
+#   - Week 10
+        - Lecture 18
+            - File Handling
+                - fstream
+                - ifstream
+                - ofstream
+        - Lecture 19
+            - File Handling
+                - fstream
+                - ifstream
+                - ofstream
+                - Binary Files
+                --- NOTES TO ADD: Complete all cases of file handling
+                    - ios::in -> opens file for input
+                    - ios::out -> opens file for output
+                    - ios::app -> opens file for appending
+                    - ios::ate -> opens file for appending at the end -> the file pointer is at the end of the file
+                    - ios::binary -> opens file in binary mode -> the file is opened in binary mode
+                    - ios::trunc -> opens file and truncates it to 0 length -> it deletes all the contents of the file
+
+#   - Week 11
+        - Lecture 20
+            - Exception Handling
+                - try
+                - catch
+                - throw
+        - Lecture 21
+            - Exception Handling
+                - try
+                - catch
+                - throw
