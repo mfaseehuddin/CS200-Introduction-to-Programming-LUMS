@@ -83,8 +83,8 @@ void readWriteBinary(string fileName){
 
 int main() {
 
-    // writeAppend("testApp.txt");
-    // writeAppend("testApp.txt");
+    writeAppend("testApp.txt");
+    writeAppend("testApp.txt");
 
     // writeTrunc("testTrunc.txt");
     // writeTrunc("testTrunc.txt");
@@ -96,7 +96,7 @@ int main() {
 
     // readWrite("testReadWrite.txt");
 
-    readWriteBinary("testBinary.txt");
+    // readWriteBinary("testBinary.txt");
 
     return 0;
 }
