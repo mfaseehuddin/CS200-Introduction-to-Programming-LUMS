@@ -170,14 +170,6 @@ public:
 
     void deleteNode(Node *node)
     {
-        //to delete node
-        //find node
-        //if node has no children
-        //delete node
-
-        //if node has one child
-        //replace node with child
-
         if(this->root == NULL)
         {
             cout << "Tree is empty" << endl;
