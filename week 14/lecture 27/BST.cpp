@@ -150,6 +150,7 @@ public:
     // the right node will be printed 2 levels deeper
     // and so on
 
+    //printPreOrder prints in the order: root, left, right
     void printPreOrder(Node *node)
     {
         if (node == NULL)
@@ -159,6 +160,7 @@ public:
         printPreOrder(node->getRight());
     }
 
+    //printPostOrder prints in the order: left, right, root
     void printPostOrder(Node *node)
     {
         if (node == NULL)
